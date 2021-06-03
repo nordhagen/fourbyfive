@@ -38,7 +38,7 @@ program
   ])
   .option(
     '-o, --output <string>',
-    'Output directory, defaults to "igformat" dir in input',
+    'Output directory, defaults to "fourbyfive" dir in input',
   )
   .option('--no-sharpen', "Don't sharpen after resizing")
   .option(
@@ -54,7 +54,7 @@ options.input = path.join(process.cwd(), options.input)
 if (options.output) {
   options.output = path.join(process.cwd(), options.output)
 } else {
-  options.output = path.join(options.input, 'igformat')
+  options.output = path.join(options.input, 'fourbyfive')
 }
 
 if (!fs.existsSync(options.output)) {
@@ -79,7 +79,7 @@ fs.readdir(options.input, function (err, files) {
       if (stat.isFile() && IMAGE_FILE_EXP.test(file)) {
         const outputFile = path.join(
           options.output,
-          file.replace(IMAGE_FILE_EXP, '_igformat.jpg'),
+          file.replace(IMAGE_FILE_EXP, '_fourbyfive.jpg'),
         )
 
         const size = {
