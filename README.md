@@ -25,7 +25,7 @@ Options:
   -c, --color <numbers...>  Color of background/border (default: ["255","255","255","1"])
   -o, --output <string>     Output directory, defaults to "igformat" dir in input
   --no-sharpen              Don't sharpen after resizing
-  --no-tallportrait         Use 1:1 format for landscape-oriented photos instead if 4:5
+  --no-talllandscape        Use 1:1 format for landscape-oriented photos instead if 4:5
   -h, --help                display help for command
 ```
 
