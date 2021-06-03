@@ -40,10 +40,10 @@ program
     '-o, --output <string>',
     'Output directory, defaults to "igformat" dir in input',
   )
-  .option('--no-sharpen', 'Sharpen after resizing')
+  .option('--no-sharpen', "Don't sharpen after resizing")
   .option(
-    '--no-tallportrait',
-    'Use 4x5 format for portrait orientation also',
+    '--no-talllandscape',
+    'Use 1:1 format for landscape-oriented photos instead if 4:5',
   )
 
 program.parse()
@@ -89,7 +89,7 @@ fs.readdir(options.input, function (err, files) {
 
         const dimensions = sizeOf(filePath)
         if (
-          !options.tallportrait &&
+          !options.talllandscape &&
           dimensions.width >= dimensions.height
         ) {
           size.width = SHORT_EDGE
