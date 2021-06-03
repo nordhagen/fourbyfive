@@ -4,7 +4,7 @@
   "description": "",
   "main": "bin/index.js",
   "bin": {
-    "igformat": "./bin/index.js"
+    "fourbyfive": "./bin/index.js"
   },
   "keywords": [],
   "author": "",
