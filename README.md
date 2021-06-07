@@ -1,5 +1,3 @@
-Hi, NPM/Judith 👋
-
 # fourbyfive
 
 Command line tool to format images for best possible results on Instagram.
