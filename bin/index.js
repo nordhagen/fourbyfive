@@ -15,7 +15,7 @@ const MODE_ARG_MAP = {
   fit: 'contain',
 }
 
-program.version('1.0.0')
+program.version('1.1.1')
 
 program
   .option('-i, --input <string>', 'Source/input directory', '.')

@@ -66,12 +66,12 @@ Scaling images always results in loss of sharpness. By default fourbyfive will a
 $ fourbyfive --no-sharpen
 ```
 
-## --no-talllandscape option
+## --aspect option
 
-By default fourbyfive will output every image in the maximum size 4:5 aspect ratio. If you insteas prefer your landscape-oriented images to not take up as much space you can add the `--no-talllandscape` flag and fourbyfive will instead output square images of maximum size for images where the width is larger than the height.
+By default fourbyfive will output every image in the maximum size 4:5 aspect ratio. If you prefer your a different aspect ratio you can specify it here.
 
 ```shell
-$ fourbyfive --no-talllandscape
+$ fourbyfive --a 9:16
 ```
 
 ## The theory
