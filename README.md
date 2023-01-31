@@ -23,11 +23,11 @@ Options:
   -V, --version             output the version number
   -i, --input <string>      Source/input directory (default: ".")
   -m, --mode <string>       Scaling mode, "fit" or "fill" (default: "fit")
+  -a, --aspect <string>     Output aspect ratio (default: "4:5")
   -p, --padding <integer>   Padding width in pixels as integer (default: 0)
   -c, --color <numbers...>  Color of background/border (default: ["255","255","255","1"])
   -o, --output <string>     Output directory, defaults to "fourbyfive" dir in input
   --no-sharpen              Don't sharpen after resizing
-  --no-talllandscape        Use 1:1 format for landscape-oriented photos instead if 4:5
   -h, --help                display help for command
 ```
 

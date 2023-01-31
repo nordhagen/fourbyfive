@@ -9,8 +9,7 @@ const sizeOf = require('image-size')
 
 const IMAGE_FILE_EXP = /\.jpg|jpeg|tif|tiff|png$/i
 const BORDER = 10
-const SHORT_EDGE = 2160
-const LONG_EDGE = 2700
+const WIDTH = 2160
 const MODE_ARG_MAP = {
   fill: 'cover',
   fit: 'contain',
@@ -40,11 +39,12 @@ program
     '-o, --output <string>',
     'Output directory, defaults to "fourbyfive" dir in input',
   )
-  .option('--no-sharpen', "Don't sharpen after resizing")
   .option(
-    '--no-talllandscape',
-    'Use 1:1 format for landscape-oriented photos instead if 4:5',
+    '-a, --aspect <string>',
+    'Output aspect ratio, default: "4:5"',
+    '4:5',
   )
+  .option('--no-sharpen', "Don't sharpen after resizing")
 
 program.parse()
 const options = program.opts()
@@ -55,6 +55,13 @@ if (options.output) {
   options.output = path.join(process.cwd(), options.output)
 } else {
   options.output = path.join(options.input, 'fourbyfive')
+}
+
+const aspectParts = options.aspect.split(':')
+
+const size = {
+  width: WIDTH,
+  height: (WIDTH / aspectParts[0]) * aspectParts[1],
 }
 
 if (!fs.existsSync(options.output)) {
@@ -79,22 +86,11 @@ fs.readdir(options.input, function (err, files) {
       if (stat.isFile() && IMAGE_FILE_EXP.test(file)) {
         const outputFile = path.join(
           options.output,
-          file.replace(IMAGE_FILE_EXP, '_fourbyfive.jpg'),
+          file.replace(
+            IMAGE_FILE_EXP,
+            `_${options.aspect.replace(':', 'x')}_fourbyfive.jpg`,
+          ),
         )
-
-        const size = {
-          width: SHORT_EDGE,
-          height: LONG_EDGE,
-        }
-
-        const dimensions = sizeOf(filePath)
-        if (
-          !options.talllandscape &&
-          dimensions.width >= dimensions.height
-        ) {
-          size.width = SHORT_EDGE
-          size.height = SHORT_EDGE
-        }
 
         const padding = parseInt(options.padding) * 2
         size.width -= padding * 2
