@@ -93,8 +93,6 @@ fs.readdir(options.input, function (err, files) {
         )
 
         const padding = parseInt(options.padding) * 2
-        size.width -= padding * 2
-        size.height -= padding * 2
 
         const bgColor = {
           r: parseInt(options.color[0]),
@@ -104,12 +102,16 @@ fs.readdir(options.input, function (err, files) {
         }
 
         sharp(filePath)
-          .resize(size.width, size.height, {
-            kernel: sharp.kernel.cubic,
-            fit: MODE_ARG_MAP[options.mode],
-            fastShrinkOnLoad: false,
-            background: bgColor,
-          })
+          .resize(
+            size.width - padding * 2,
+            size.height - padding * 2,
+            {
+              kernel: sharp.kernel.cubic,
+              fit: MODE_ARG_MAP[options.mode],
+              fastShrinkOnLoad: false,
+              background: bgColor,
+            },
+          )
           .sharpen(options.sharpen)
           .extend({
             top: padding,
