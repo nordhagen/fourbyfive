@@ -14,7 +14,6 @@
   "license": "ISC",
   "dependencies": {
     "commander": "^7.2.0",
-    "image-size": "^1.0.1",
-    "sharp": "^0.30.4"
+    "sharp": "^0.32.5"
   }
 }
