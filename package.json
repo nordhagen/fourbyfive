@@ -3,6 +3,11 @@
   "version": "1.2.1",
   "description": "",
   "main": "bin/index.js",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nordhagen/fourbyfive/issues"
+  },
+  "homepage": "https://github.com/nordhagen/fourbyfive#readme",
   "scripts": {
     "test": "node bin/index.js -i ./testimgs"
   },
@@ -11,7 +16,6 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
   "dependencies": {
     "commander": "^7.2.0",
     "sharp": "^0.32.5"
