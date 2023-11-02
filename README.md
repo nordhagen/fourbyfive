@@ -27,6 +27,7 @@ Options:
   -p, --padding <integer>   Padding width in pixels as integer (default: 0)
   -c, --color <numbers...>  Color of background/border (default: ["255","255","255","1"])
   -o, --output <string>     Output directory, defaults to "fourbyfive" dir in input
+  -w, --width <integer>     Width of resulting image, default: 2160. Height calculated from aspec ratio.
   --no-sharpen              Don't sharpen after resizing
   -h, --help                display help for command
 ```
