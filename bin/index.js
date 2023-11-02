@@ -32,6 +32,11 @@ program
     'Output aspect ratio, default: "4:5"',
     '4:5',
   )
+  .option(
+    '-w, --width <integer>',
+    'Width of resulting image, default: 2160. Height calculated from aspec ratio',
+    2160,
+  )
   .option('--no-sharpen', "Don't sharpen after resizing")
 
 program.parse()
