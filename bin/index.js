@@ -3,7 +3,7 @@
 const { program } = require('commander')
 const { processDir } = require('../lib')
 
-program.version('1.1.1')
+program.version('1.3.0')
 
 program
   .option('-i, --input <string>', 'Source/input directory', '.')
