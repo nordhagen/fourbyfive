@@ -37,7 +37,7 @@ program
     'Width of resulting image, default: 2160. Height calculated from aspec ratio',
     2160,
   )
-  .option('--no-sharpen', "Don't sharpen after resizing")
+  .option('-s, --sharpen <integer>', 'Sharpening value', 1)
 
 program.parse()
 processDir(program.opts())

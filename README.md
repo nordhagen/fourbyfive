@@ -28,7 +28,7 @@ Options:
   -c, --color <numbers...>  Color of background/border (default: ["255","255","255","1"])
   -o, --output <string>     Output directory, defaults to "fourbyfive" dir in input
   -w, --width <integer>     Width of resulting image, default: 2160. Height calculated from aspec ratio.
-  --no-sharpen              Don't sharpen after resizing
+  -s, --sharpen <integer>   Amount of sharpening, 0 for none or 1 or 2, default 1
   -h, --help                display help for command
 ```
 
@@ -59,12 +59,12 @@ These options are combined into a single color option. The default is white, but
 $ fourbyfive -color 0 0 255 0.5
 ```
 
-## --no-sharpen option
+## --sharpen option
 
-Scaling images always results in loss of sharpness. By default fourbyfive will apply a very gentle sharpening to images after they are scaled. This can be disabled with the `--no-sharpen` option
+Scaling images always results in loss of sharpness. By default fourbyfive will apply a very gentle sharpening to images after they are scaled. This can be disabled by passing a value of 0, or increased by passing a value of 2.
 
 ```shell
-$ fourbyfive --no-sharpen
+$ fourbyfive -s 2
 ```
 
 ## --aspect option
@@ -72,7 +72,7 @@ $ fourbyfive --no-sharpen
 By default fourbyfive will output every image in the maximum size 4:5 aspect ratio. If you prefer your a different aspect ratio you can specify it here.
 
 ```shell
-$ fourbyfive --a 9:16
+$ fourbyfive -a 9:16
 ```
 
 ## The theory
