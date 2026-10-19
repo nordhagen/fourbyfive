@@ -4,7 +4,7 @@ const { program } = require('commander')
 const { processDir } = require('../lib')
 
 const run = async () => {
-  program.version('1.3.0')
+  program.version('1.4.1')
 
   program
     .option('-i, --input <string>', 'Source/input directory', '.')
