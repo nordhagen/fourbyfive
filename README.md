@@ -16,6 +16,21 @@ The simplest way to use fourbyfive is to cd to the directory where your images a
 $ fourbyfive
 ```
 
+You can also use the package as a library from another Node.js application:
+
+```js
+const { processDir } = require('fourbyfive')
+
+processDir({
+  input: './images',
+  output: './processed',
+  aspect: '4:5',
+  width: 2160,
+}).then((result) => {
+  console.log('Processed files:', result.files)
+})
+```
+
 ## Options and defaults
 
 ```shell
